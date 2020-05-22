@@ -4,9 +4,9 @@ setrecursionlimit(10 ** 4)
 
 
 def permutations(data, length):
-    global stack
+    global store
     if length == len(data):
-        stack.append(list(data))
+        store.append(list(data))
         return
     for i in range(length, len(data)):
         data[length], data[i] = data[i], data[length]
@@ -14,7 +14,7 @@ def permutations(data, length):
         data[length], data[i] = data[i], data[length]
 
 
-stack = []
+store = []
 data = [str(i) for i in input("Enter your data:")]
 permutations(data, 0)
-print(stack, data)
+print(store, data)
